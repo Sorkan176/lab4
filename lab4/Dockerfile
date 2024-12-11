@@ -6,8 +6,7 @@ COPY package*.json ./
 
 RUN npm install && \
     npm cache verify && \
-    npm cache clean --force && \
-    npm cache verify
+    npm cache clean --force
 
 COPY . .
 
