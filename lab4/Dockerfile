@@ -2,13 +2,13 @@ FROM node:14-alpine
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY app/package*.json ./
 
 RUN npm install && \
     npm cache verify && \
-    npm cache clean --force
+    npm cache clean --force   
 
-COPY . .
+COPY app/ .
 
 RUN addgroup -S appuser && adduser -S appuser -G appuser
 USER appuser
